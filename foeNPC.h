@@ -11,6 +11,7 @@ private:
     int hp;
     int atk;
     int def;
+    int lvl;
 
 public:
     foeNPC(string name, int hp, int atk, int def);
@@ -19,11 +20,13 @@ public:
     int getHP();
     int getATK();
     int getDEF();
+    int getLVL();
 
-    void getName(string name);
+    void setName(string name);
     void setHP(int hp);
     void setATK(int atk);
     void setDEF(int def);
+    void setLVL(int lvl);
 };
 
 #endif
