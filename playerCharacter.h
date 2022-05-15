@@ -18,6 +18,7 @@ private:
 public:
     playerCharacter(string name, int hp, int atk, int def, int exp, int lvl);
 
+    // void blobl();
     string getName();
     int getHP();
     int getATK();
@@ -31,6 +32,7 @@ public:
     void setDEF(int def);
     void setEXP(int exp);
     void setLVL(int lvl);
+    void playerStat();
 };
 
 #endif

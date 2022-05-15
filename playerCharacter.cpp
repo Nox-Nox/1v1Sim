@@ -1,4 +1,5 @@
 #include "playerCharacter.h"
+#include <iostream>
 using namespace std;
 
 playerCharacter::playerCharacter(string cname, int h_p, int a_tk, int d_ef, int e_xp, int l_vl)
@@ -11,7 +12,7 @@ playerCharacter::playerCharacter(string cname, int h_p, int a_tk, int d_ef, int 
     lvl = l_vl;
 }
 
-string getName();
+string playerCharacter::getName() { return name; }
 int playerCharacter::getHP() { return hp; }
 int playerCharacter::getATK() { return atk; }
 int playerCharacter::getDEF() { return def; }
@@ -24,3 +25,13 @@ void playerCharacter::setATK(int a_tk) { atk = a_tk; }
 void playerCharacter::setDEF(int d_ef) { def = d_ef; }
 void playerCharacter::setEXP(int e_xp) { exp = e_xp; }
 void playerCharacter::setLVL(int l_vl) { lvl = l_vl; }
+void playerCharacter::playerStat()
+{
+    string a = name;
+    int b = hp;
+    int c = atk;
+    int d = def;
+    int e = exp;
+    int f = lvl;
+    cout << "Character's name: " << a << "\nHP: " << b << "\nATK: " << c << "\nDEF: " << d << "\nEXP: " << e << "\nLVL: " << f << endl;
+}
