@@ -1,8 +1,11 @@
 #include "playerCharacter.h"
+#include "skill.h"
 #include <iostream>
+#include <cstdint>
+#include <cstring>
 using namespace std;
 
-playerCharacter::playerCharacter(string cname, int h_p, int a_tk, int d_ef, int e_xp, int l_vl)
+playerCharacter::playerCharacter(string cname, int h_p, int a_tk, int d_ef, int e_xp, int l_vl, skill s_kills[4])
 {
     name = cname;
     hp = h_p;
@@ -10,6 +13,8 @@ playerCharacter::playerCharacter(string cname, int h_p, int a_tk, int d_ef, int 
     def = d_ef;
     exp = e_xp;
     lvl = l_vl;
+    for (int i = 0; i < 4; i++)
+        skills[i] = s_kills[i];
 }
 
 string playerCharacter::getName() { return name; }

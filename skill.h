@@ -11,6 +11,7 @@ private:
     int damage;
 
 public:
+    skill();
     skill(string skill_name, int damage);
 
     string getSkillName();

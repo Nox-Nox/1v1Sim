@@ -1,6 +1,6 @@
 #include "skill.h"
 using namespace std;
-
+skill::skill() {}
 skill::skill(string skillName, int dmg)
 {
     skill_name = skillName;
