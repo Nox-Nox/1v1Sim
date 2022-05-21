@@ -19,6 +19,9 @@ int main(int argc, char const *argv[])
     s[1] = hydrobomb;
     s[2] = cut;
     s[3] = splash;
+
+    skill *skillPtr;
+    skillPtr = s;
     // cout << s[0].getSkillName() << "\n";
     // for (i = 0; i < 4; i++)
     // {
@@ -55,20 +58,34 @@ int main(int argc, char const *argv[])
         cout << "skill: " << i << " " << s[i].getSkillName() << " Damage: " + to_string(s[i].getDamage()) << "\n";
     }
 
+    cout << "Which skill do you wanna use? ";
+    cin >> move;
+
     if (0 < move < 4)
     {
-        cout << "you used " + s[move].getSkillName();
-        s[move].getDamage();
-        monster.getHP();
-        monster.getDEF();
-        monster.setHP((s[move].getDamage() - monster.getDEF()) - monster.getHP());
-        cout << monster.getHP();
+        int p_s_dmg = playerPtr->getATK() + (skillPtr + move)->getDamage();
+        cout << to_string(p_s_dmg) << "\n";
+        int monsterDef = foePtr->getDEF();
+        int monsterHP = foePtr->getHP();
+        int new_monster_hp = monsterHP - (p_s_dmg - monsterDef);
+        foePtr->setHP(new_monster_hp);
+        cout << to_string(foePtr->getHP());
     }
-}
-for (i = 0; i < 4; i++)
-{
-    cout << "skill: " << i << " " << s[i].getSkillName() << " Damage: " << s[i].getDamage() << "\n";
-}
 
-return 0;
+    // if (0 < move < 4)
+    // {
+    //     cout << "you used " + s[move].getSkillName();
+    //     s[move].getDamage();
+    //     monster.getHP();
+    //     monster.getDEF();
+    //     monster.setHP((s[move].getDamage() - monster.getDEF()) - monster.getHP());
+    //     cout << monster.getHP();
+    // }
+    // }
+    // for (i = 0; i < 4; i++)
+    // {
+    //     cout << "skill: " << i << " " << s[i].getSkillName() << " Damage: " << s[i].getDamage() << "\n";
+    // }
+
+    return 0;
 }
