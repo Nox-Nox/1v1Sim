@@ -20,11 +20,11 @@ int main(int argc, char const *argv[])
     s[2] = cut;
     s[3] = splash;
     // cout << s[0].getSkillName() << "\n";
-    for (i = 0; i < 4; i++)
-    {
-        cout << s[i].getSkillName();
-        cout << "\n";
-    }
+    // for (i = 0; i < 4; i++)
+    // {
+    //     cout << "skill: " + i << s[i].getSkillName() << " Damage: " + s[i].getDamage;
+    //     cout << "\n";
+    // }
     string name;
     cout << "Hi! please choose your character's nick name: ";
     getline(cin, name);
@@ -38,16 +38,37 @@ int main(int argc, char const *argv[])
     playerCharacter *playerPtr;
     foeNPC *foePtr;
 
-    playerCharacter player("dgs", 100, 10, 5, 0, 0, s);
+    playerCharacter player(name, 100, 10, 5, 0, 0, s);
     playerPtr = &player;
+
     foeNPC monster(name, 50, 8, 5, 0);
+    foePtr = &monster;
+
     playerPtr->playerStat();
+
     int move;
     // while (alive)
     // {
-    //     int turn = 0;
-    //     cout << "Which skill do you wanna use?";
-    //     cin >> move;
-    // }
-    return 0;
+    int turn = 0;
+    for (i = 0; i < 4; i++)
+    {
+        cout << "skill: " << i << " " << s[i].getSkillName() << " Damage: " + to_string(s[i].getDamage()) << "\n";
+    }
+
+    if (0 < move < 4)
+    {
+        cout << "you used " + s[move].getSkillName();
+        s[move].getDamage();
+        monster.getHP();
+        monster.getDEF();
+        monster.setHP((s[move].getDamage() - monster.getDEF()) - monster.getHP());
+        cout << monster.getHP();
+    }
+}
+for (i = 0; i < 4; i++)
+{
+    cout << "skill: " << i << " " << s[i].getSkillName() << " Damage: " << s[i].getDamage() << "\n";
+}
+
+return 0;
 }
