@@ -1,5 +1,5 @@
 #ifndef FOENPC_H
-#define FOENPC_h
+#define FOENPC_H
 
 #include <string>
 using namespace std;

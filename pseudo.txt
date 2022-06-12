@@ -1,0 +1,22 @@
+while alive
+
+    for list of monsters
+    monsterAlive = true
+     while monsterAlive
+
+        player character attack
+
+        monster attack
+
+        if monster hp 0
+        "create" new monster by updating values in the monster object and incrementing stats
+        increment player character stats
+        monsterAlive = false
+
+        else if player character hp 0
+        alive = false
+        game end
+
+
+
+        
